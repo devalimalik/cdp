@@ -6,7 +6,7 @@
 
           <div class="col-lg-4 col-md-4">
             <div class="footer-info">
-              <h3>Career Detection Platform</h3>
+              <h3>Career Determination Platform</h3>
               <p>
                 Gulberg Green <br>
                 Islamabad, PK<br><br>
@@ -25,19 +25,18 @@
           <div class="col-lg-4 col-md-4 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Start Aptitude Test</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Start Skill Test</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Universities Informartion</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Generate CV</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo URLROOT.'/tests/index'; ?>">Take Test</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo URLROOT.'/unis/index'; ?>">Universities Informartion</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo URLROOT.'/resume/index'; ?>">Generate Resume</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-4 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Career Detection</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">CV Generator</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">University Information</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#home-test">Career Determination</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#home-cv">Resume Generator</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#home-unis">University Information</a></li>
             </ul>
           </div>
 

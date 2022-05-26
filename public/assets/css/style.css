@@ -615,7 +615,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# About
+# home-sec
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
@@ -661,15 +661,27 @@ section {
 }
 
 /*--------------------------------------------------------------
-# About
+# home-sec
 --------------------------------------------------------------*/
-.about {
-  background: url("../img/about-bg.jpg") center center;
+.home-test {
+  background: url("../img/tests-bg.jpg") center center;
   background-size: cover;
   position: relative;
   padding: 80px 0;
 }
-.about:before {
+.home-cv {
+  background: url("../img/cv-bg.jpg") center center;
+  background-size: cover;
+  position: relative;
+  padding: 80px 0;
+}
+.home-unis{
+  background: url("../img/unis-bg.jpg") center center;
+  background-size: cover;
+  position: relative;
+  padding: 80px 0;
+}
+.home-sec:before {
   content: "";
   background: rgba(0, 0, 0, 0.8);
   position: absolute;
@@ -678,16 +690,16 @@ section {
   left: 0;
   right: 0;
 }
-.about .about-img {
+.home-sec .home-sec-img {
   position: relative;
   transition: 0.5s;
 }
-.about .about-img img {
+.home-sec .home-sec-img img {
   max-width: 100%;
   border: 4px solid rgba(255, 255, 255, 0.2);
   position: relative;
 }
-.about .about-img::before {
+.home-sec .home-sec-img::before {
   position: absolute;
   left: 20px;
   top: 20px;
@@ -699,7 +711,7 @@ section {
   border-top: 5px solid #cda45e;
   transition: 0.5s;
 }
-.about .about-img::after {
+.home-sec .home-sec-img::after {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -711,38 +723,38 @@ section {
   border-bottom: 5px solid #cda45e;
   transition: 0.5s;
 }
-.about .about-img:hover {
+.home-sec .home-sec-img:hover {
   transform: scale(1.03);
 }
-.about .about-img:hover::before {
+.home-sec .home-sec-img:hover::before {
   left: 10px;
   top: 10px;
 }
-.about .about-img:hover::after {
+.home-sec .home-sec-img:hover::after {
   right: 10px;
   bottom: 10px;
 }
-.about .content h3 {
+.home-sec .content h3 {
   font-weight: 600;
   font-size: 26px;
 }
-.about .content ul {
+.home-sec .content ul {
   list-style: none;
   padding: 0;
 }
-.about .content ul li {
+.home-sec .content ul li {
   padding-bottom: 10px;
 }
-.about .content ul i {
+.home-sec .content ul i {
   font-size: 20px;
   padding-right: 4px;
   color: #cda45e;
 }
-.about .content p:last-child {
+.home-sec .content p:last-child {
   margin-bottom: 0;
 }
 @media (min-width: 1024px) {
-  .about {
+  .home-sec {
     background-attachment: fixed;
   }
 }
