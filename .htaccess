@@ -1,0 +1,8 @@
+# checks if mod_rewrite is enabled in apache
+<IfModule mod_rewrite.c>
+# Turn on RewriteEngine
+  RewriteEngine on
+# Example RewriteRule Pattern Substitution [flags]
+  RewriteRule ^$ public/ [L]
+  RewriteRule (.*) public/$1 [L]
+</IfModule>
