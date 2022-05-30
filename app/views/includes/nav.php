@@ -8,6 +8,7 @@
             <li class="dropdown <?php if($data['title'] == "Profile"){echo "active";} ?>"><a href="#"><span><?php if(isset($_SESSION['username'])){echo $_SESSION['username'];} ?></span> <i class="bi bi-chevron-down"></i></a>
               <ul>
                 <li><a href="<?php echo URLROOT.'/users/profile'; ?>">Profile</a></li>
+                <li><a href="<?php echo URLROOT.'/tests/history'; ?>">Results</a></li>
                 <li><a href="<?php echo URLROOT; ?>/users/logout">Logout</a></li>
               </ul>
             </li>
