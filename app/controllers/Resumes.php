@@ -285,7 +285,7 @@ class Resumes extends Controller {
             $pdf->Cell(85);
             $pdf->Cell(10,10,'Introduction',0,1,'C');
             $pdf->SetFont('Arial','',12);
-            $pdf->Cell(55,2,$bs[0]->introduction,0,1,'C');
+            $pdf->Cell(165,2,$bs[0]->introduction,0,1,'C');
 
             $pdf->SetFont('Arial','B',12);
             $pdf->Cell(80,20,' ',0,1,'C');
