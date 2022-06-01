@@ -2,6 +2,8 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+require APPROOT.'/controllers/fpdf/fpdf.php';
 class Resumes extends Controller {
     public function __construct() {
         $this->userModel = $this->model('Resume');
@@ -244,13 +246,74 @@ class Resumes extends Controller {
         if(isset($bs[0]->id)){
             $intr = $this->userModel->getIntrests($bs[0]->id);
             $skl = $this->userModel->getSkills($bs[0]->id);
-        }
 
-        echo '<pre>';
-        print_r($bs);
-        echo '<pre>';
-        print_r($intr);
-        echo '<pre>';
-        print_r($skl);
+            $pdf = new FPDF();
+            $pdf->AddPage();
+            $pdf->SetFont('Arial','B',16);
+            $pdf->Cell(60);
+            $pdf->Cell(60,10,$bs[0]->name,1,1,'C');
+            $pdf->SetFont('Arial','B',12);
+            $pdf->Cell(5);
+            $pdf->Cell(10,10,'Email : ',0,0,'C');
+            $pdf->SetFont('Arial','',12);
+            $pdf->Cell(55,10,$bs[0]->email,0,0,'C');
+            $pdf->SetFont('Arial','B',12);
+            $pdf->Cell(50);
+            $pdf->Cell(30,10,'Contact : ',0,0,'C');
+            $pdf->SetFont('Arial','',12);
+            $pdf->Cell(18,10,$bs[0]->contact,0,1,'C');
+            $pdf->Cell(7);
+            $pdf->SetFont('Arial','B',12);
+            $pdf->Cell(10,10,'Address : ',0,0,'C');
+            $pdf->Cell(30);
+            $pdf->SetFont('Arial','',12);
+            $pdf->Cell(10,10,$bs[0]->address,0,0,'C');
+            $pdf->Cell(77);
+            $pdf->SetFont('Arial','B',12);
+            $pdf->Cell(8,10,'Experience : ',0,0,'C');
+            $pdf->Cell(13);
+            $pdf->SetFont('Arial','',12);
+            $pdf->Cell(10,10,$bs[0]->experience,0,1,'C');
+            $pdf->Cell(7);
+            $pdf->SetFont('Arial','B',12);
+            $pdf->Cell(18,10,'Qualification : ',0,0,'C');
+            $pdf->Cell(20);
+            $pdf->SetFont('Arial','',12);
+            $pdf->Cell(10,10,$bs[0]->qualification,0,1,'C');
+            $pdf->SetFont('Arial','B',12);
+            $pdf->Cell(80,20,' ',0,1,'C');
+            $pdf->Cell(85);
+            $pdf->Cell(10,10,'Introduction',0,1,'C');
+            $pdf->SetFont('Arial','',12);
+            $pdf->Cell(55,2,$bs[0]->introduction,0,1,'C');
+
+            $pdf->SetFont('Arial','B',12);
+            $pdf->Cell(80,20,' ',0,1,'C');
+            $pdf->Cell(85);
+            $pdf->Cell(10,10,'Intrests',0,1,'C');
+            $pdf->SetFont('Arial','',12);
+            
+            foreach($intr as $ints){
+                $pdf->Cell(1);
+                $pdf->Cell(55,10,$ints->name,0,1,'C');
+            }
+
+            $pdf->SetFont('Arial','B',12);
+            $pdf->Cell(80,20,' ',0,1,'C');
+            $pdf->Cell(85);
+            $pdf->Cell(10,10,'Skills',0,1,'C');
+            $pdf->SetFont('Arial','',12);
+            
+            foreach($skl as $sk){
+                $pdf->Cell(1);
+                $pdf->Cell(55,10,$sk->name,0,1,'C');
+            }
+            
+
+            $file = time().'.pdf';
+            // $pdf->Output();
+            $pdf->Output($file, 'D');
+        }
+        
     }
 }
