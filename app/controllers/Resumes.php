@@ -256,57 +256,57 @@ class Resumes extends Controller {
             $pdf->Cell(5);
             $pdf->Cell(10,10,'Email : ',0,0,'C');
             $pdf->SetFont('Arial','',12);
-            $pdf->Cell(55,10,$bs[0]->email,0,0,'C');
+            $pdf->Cell(55,10,$bs[0]->email,0,1,'C');
             $pdf->SetFont('Arial','B',12);
-            $pdf->Cell(50);
-            $pdf->Cell(30,10,'Contact : ',0,0,'C');
+            $pdf->Cell(5);
+            $pdf->Cell(13,10,'Contact : ',0,0,'C');
             $pdf->SetFont('Arial','',12);
-            $pdf->Cell(18,10,$bs[0]->contact,0,1,'C');
+            $pdf->Cell(38,10,$bs[0]->contact,0,1,'C');
             $pdf->Cell(7);
             $pdf->SetFont('Arial','B',12);
             $pdf->Cell(10,10,'Address : ',0,0,'C');
-            $pdf->Cell(30);
+            $pdf->Cell(35);
             $pdf->SetFont('Arial','',12);
-            $pdf->Cell(10,10,$bs[0]->address,0,0,'C');
-            $pdf->Cell(77);
+            $pdf->Cell(10,10,$bs[0]->address,0,1,'C');
+            $pdf->Cell(5);
             $pdf->SetFont('Arial','B',12);
-            $pdf->Cell(8,10,'Experience : ',0,0,'C');
-            $pdf->Cell(13);
+            $pdf->Cell(20,10,'Experience : ',0,0,'C');
+            $pdf->Cell(7);
             $pdf->SetFont('Arial','',12);
             $pdf->Cell(10,10,$bs[0]->experience,0,1,'C');
             $pdf->Cell(7);
             $pdf->SetFont('Arial','B',12);
             $pdf->Cell(18,10,'Qualification : ',0,0,'C');
-            $pdf->Cell(20);
+            $pdf->Cell(10);
             $pdf->SetFont('Arial','',12);
             $pdf->Cell(10,10,$bs[0]->qualification,0,1,'C');
             $pdf->SetFont('Arial','B',12);
-            $pdf->Cell(80,20,' ',0,1,'C');
+            $pdf->Cell(80,5,' ',0,1,'C');
             $pdf->Cell(85);
             $pdf->Cell(10,10,'Introduction',0,1,'C');
             $pdf->SetFont('Arial','',12);
-            $pdf->Cell(165,2,$bs[0]->introduction,0,1,'C');
+            $pdf->Cell(153,2,$bs[0]->introduction,0,1,'C');
 
             $pdf->SetFont('Arial','B',12);
-            $pdf->Cell(80,20,' ',0,1,'C');
+            $pdf->Cell(80,5,' ',0,1,'C');
             $pdf->Cell(85);
-            $pdf->Cell(10,10,'Intrests',0,1,'C');
+            $pdf->Cell(7,10,'Intrests',0,1,'C');
             $pdf->SetFont('Arial','',12);
             
             foreach($intr as $ints){
                 $pdf->Cell(1);
-                $pdf->Cell(55,10,$ints->name,0,1,'C');
+                $pdf->Cell(18,5,$ints->name,0,0,'C');
             }
 
             $pdf->SetFont('Arial','B',12);
-            $pdf->Cell(80,20,' ',0,1,'C');
+            $pdf->Cell(80,5,' ',0,1,'C');
             $pdf->Cell(85);
-            $pdf->Cell(10,10,'Skills',0,1,'C');
+            $pdf->Cell(7,10,'Skills',0,1,'C');
             $pdf->SetFont('Arial','',12);
             
             foreach($skl as $sk){
                 $pdf->Cell(1);
-                $pdf->Cell(55,10,$sk->name,0,1,'C');
+                $pdf->Cell(13,5,$sk->name,0,0,'C');
             }
             
 
